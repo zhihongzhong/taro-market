@@ -1,0 +1,49 @@
+
+$search-bar-height: 50rpx;
+
+.search-bar-root {
+  position: relative;
+  display: flex;
+  height: $search-bar-height;
+  width:100%;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  &__button {
+    width: 50rpx;
+    height:$search-bar-height;
+    display:inline-flex;
+    justify-content:center;
+    align-items: center;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+  }
+
+  .leftbutton {
+    background:url('../../images/icon_app.png') no-repeat;
+    background-size: 100% 100%;
+  }
+  .rightbutton {
+    background: url('../../images/icon_card.png') no-repeat;
+    background-size: 100% 100%;
+  }
+  &__input-wrapper {
+    height: 50rpx;
+    float: left;
+    flex-grow: 1;
+    margin-left: 20rpx;
+    margin-right: 10rpx;
+    font-size: 25rpx;
+    position: relative;
+
+    .search {
+      position: absolute;
+      left: 10rpx;
+      top: 10rpx;
+      height: 35rpx;
+      width: 35rpx;
+      background: url('../../images/icon_search.png') no-repeat;
+      background-size: 100%;
+    }
+  }
+
+}

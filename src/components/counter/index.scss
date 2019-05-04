@@ -1,0 +1,17 @@
+
+.counter {
+  display: inline-flex;
+  flex-direction: row;
+
+  .decrement{
+    width:30rpx;
+    height:30rpx;
+  }
+  .display{
+    font-size: 12rpx;
+  }
+  .increment{
+    width:30rpx;
+    height:30rpx;
+  }
+}

@@ -1,0 +1,12 @@
+
+.card-list-root {
+  display: flex;
+  flex-direction: row;
+  align-items: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &__card-wrapper {
+    width: 50%;
+  }
+}

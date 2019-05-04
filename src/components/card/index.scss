@@ -1,0 +1,222 @@
+
+
+// $image-height: 200rpx;
+
+$horizontal-image-height: 200rpx;
+$horizontal-image-width: 200rpx;
+
+$vertical-image-height: 300rpx;
+$vertical-image-width: 100%;
+
+.card-root-two {
+  width: 50%;
+  display: inline-block;
+  .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20rpx 20rpx 10rpx 20rpx;
+    .image-wrapper {
+
+      width: $vertical-image-width;
+      height: $vertical-image-height;
+      .image {
+        width: $vertical-image-width;
+        height: $vertical-image-height;
+      }
+    }
+
+    .detail {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      &_title-wrapper {
+        flex-grow: 1;
+        .title {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size:30rpx;
+        }
+      }
+
+      &_freeshipping-wrapper {
+        flex-grow: 1;
+        .freeshipping {
+          display: inline;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size:20rpx;
+          color:rgb(252, 69, 69);
+          padding: 4rpx;
+          border: 1rpx solid rgb(252, 69, 69);
+          border-radius: 7rpx;
+          background: url('../../images/icon_freeshipping.png') no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+
+      &_price-wrapper {
+        flex-grow: 1;
+        .vip-wrapper {
+          color:rgb(252, 69, 69);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          float: left ;
+          .vip {
+            height: 40rpx;
+            width:40rpx;
+            margin-top:10rpx;
+            background:url('../../images/icon_vip.png') no-repeat;
+            background-size: 100% 100%;
+            display: inline-block;
+          }
+          .price-wrapper{
+            display: inline-block;
+            .unit {
+              font-size: 25rpx;
+            }
+            .int {
+              font-size:35rpx;
+            }
+            .float {
+              font-size: 25rpx;
+            }
+          }
+        }
+      }
+      .cart-wrapper {
+        float: right;
+        margin-right: 20rpx;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .cart {
+          background:url('../../images/icon_cart.png') no-repeat;
+          background-size: 100% 100%;
+          width: 40rpx;
+          height: 40rpx;
+        }
+      }
+    }
+  }
+  .divider {
+    margin-top: 5rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rpx;
+    background-color:#EDEDED;
+    width:95%;
+  }
+}
+
+// 愚蠢的分割线
+
+.card-root-one {
+  width:100%;
+  height: 200rpx;
+  padding:20rpx 0 20rpx 0;
+
+  .card-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    .image-wrapper {
+      width: $horizontal-image-width;
+      height: $horizontal-image-height;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .image {
+        width: 170rpx;
+        height: 170rpx;
+      }
+    }
+
+    .detail {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      &_title-wrapper {
+        flex-grow: 1;
+        .title {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
+
+      &_freeshipping-wrapper {
+        flex-grow: 1;
+        align-items: flex-start;
+        .freeshipping {
+          display: inline;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size:20rpx;
+          color:rgb(252, 69, 69);
+          padding: 4rpx;
+          border: 1rpx solid rgb(252, 69, 69);
+          border-radius: 7rpx;
+          background: url('../../images/icon_freeshipping.png') no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+
+      &_price-wrapper {
+        flex-grow: 1;
+        .vip-wrapper {
+          color:rgb(252, 69, 69);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          float: left ;
+          .vip {
+            height: 40rpx;
+            width:40rpx;
+            margin-top:10rpx;
+            background:url('../../images/icon_vip.png') no-repeat;
+            background-size: 100% 100%;
+            display: inline-block;
+          }
+          .price-wrapper{
+            display: inline-block;
+            .unit {
+              font-size: 25rpx;
+            }
+            .int {
+              font-size:35rpx;
+            }
+            .float {
+              font-size: 25rpx;
+            }
+          }
+        }
+      }
+      .cart-wrapper {
+        float: right;
+        margin-right: 50rpx;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .cart {
+          background:url('../../images/icon_cart.png') no-repeat;
+          background-size: 100% 100%;
+          width: 40rpx;
+          height: 40rpx;
+        }
+      }
+    }
+  }
+  .divider {
+    margin-top: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rpx;
+    background-color:#EDEDED;
+    width:95%;
+  }
+}
+
