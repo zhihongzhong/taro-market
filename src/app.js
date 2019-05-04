@@ -21,7 +21,8 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
-      'pages/menu/index'
+      'pages/menu/index',
+      'pages/shoppinglist/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -35,16 +36,19 @@ class App extends Component {
       selectedColor: "#000000",
       list: [
         {
-          text:"index",
           pagePath: "pages/index/index",
           iconPath:"images/icon_home.png",
           selectedIconPath:"images/icon_home_selected.png"
         },
         {
-          text:"menu",
           pagePath: "pages/menu/index",
           iconPath:"images/icon_menu.png",
           selectedIconPath:"images/icon_menu_selected.png"
+        },
+        {
+          pagePath: "pages/shoppinglist/index",
+          iconPath:"images/icon_shoppinglist.png",
+          selectedIconPath:"images/icon_shoppinglist_selected.png"
         }
       ]
     }
