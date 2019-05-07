@@ -29,7 +29,7 @@ class Index extends Component {
     Taro.navigateTo({url:"/pages/menu/index"});
   }
   componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
+    //console.log(this.props, nextProps)
   }
 
   componentWillUnmount () { }

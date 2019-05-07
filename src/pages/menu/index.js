@@ -6,7 +6,7 @@ import Modal from '../../components/modal';
 import CardList from '../../components/cardlist';
 import merchandiseImage from '../../images/itemImage.jpg';
 import './index.scss';
-import {addItem} from '../../actions/shoppinglist';
+import {addItem,increaseItem } from '../../actions/shoppinglist';
 
 
 const mapStatetoProps = ({ shoppinglist }) => ({
@@ -16,6 +16,9 @@ const mapStatetoProps = ({ shoppinglist }) => ({
 const mapDispatchToProps =(dispatch) => ({
   add(merchandise) {
     dispatch(addItem(merchandise))
+  },
+  increment(id) {
+    dispatch(increaseItem(id))
   }
 })
 
@@ -35,7 +38,7 @@ class Menu extends Component {
           img: merchandiseImage,
           freeshipping: true,
           price: 19.44,
-          respoNum: 97,
+          reposNum: 97,
           vipPrice: 18.00,
           num:1,        
         },
@@ -48,7 +51,7 @@ class Menu extends Component {
           img: merchandiseImage,
           price: 20.44,
           vipPrice: 18.00,   
-          respoNum: 99,
+          reposNum: 99,
           num:1,       
         },
         {
@@ -60,7 +63,7 @@ class Menu extends Component {
           freeshipping: true,
           price: 21.44,
           vipPrice: 18.00,   
-          respoNum: 60,
+          reposNum: 60,
           num:1,       
         }
       ],
@@ -93,7 +96,7 @@ class Menu extends Component {
     let { merchandises } = this.state;
     merchandises = merchandises.map((merchandise) => merchandise.id === id ? {
       ...merchandise,
-      num: merchandise.num < merchandise.respoNum ? merchandise.num+1: merchandise.num
+      num: merchandise.num < merchandise.reposNum ? merchandise.num+1: merchandise.num
     }: merchandise)
 
     this.setState({
@@ -119,7 +122,7 @@ class Menu extends Component {
     
     merchandises = merchandises.map((merchandise) => merchandise.id === id ? {
       ...merchandise,
-      num: num < merchandise.respoNum ? num : merchandise.respoNum
+      num: num < merchandise.reposNum ? num : merchandise.reposNum
     }: merchandise)
 
     this.setState({
@@ -127,12 +130,42 @@ class Menu extends Component {
     })
   }
 
+  addItemNumber(merchandise) {
+    const {
+      shoppinglist,
+      add,
+      increment
+    } = this.props
+
+    // if contains 
+    const contains = (array, n) => {
+      let p = array.length
+      for(let i = 0; i< p; i++)
+        if(array[i].id === n.id)
+          return true
+      return false
+    }
+
+    if(contains(shoppinglist, merchandise)) {
+      increment(merchandise.id)
+      return 
+    }
+    add(merchandise)
+  }
+
+  componentDidMount() {
+  }
   render() {
     const {
       modalShow,
       merchandises,
       currentMerchandiseId
     } = this.state
+    
+    const {
+      add    
+    } = this.props
+
     
     const currentMerchandise = this.state.merchandises.filter((m)=>m.id === currentMerchandiseId)[0]
 
@@ -151,10 +184,11 @@ class Menu extends Component {
           onMaskClick={this.onMaskClick.bind(this)}
           img={currentMerchandise.img}
           price={currentMerchandise.price}
-          respoNum = {currentMerchandise.respoNum}
+          reposNum = {currentMerchandise.reposNum}
           onMinus={this.onMinus.bind(this)}
           onPlus={this.onPlus.bind(this)}
           onChange={this.onMerchandiseChange.bind(this)}
+          onAddtoCart={()=>this.addItemNumber(currentMerchandise)}
         />
       </View>
     );

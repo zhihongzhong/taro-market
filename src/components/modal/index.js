@@ -65,7 +65,9 @@ class Modal extends Component {
       onMaskClick,
       onPlus,
       onMinus,
-      onChange
+      onChange,
+      onAddToCart,
+      onPurches
     } = this.props
 
     const {
@@ -119,8 +121,8 @@ class Modal extends Component {
             </View>
           </View>
           <View className="foot">
-            <Button className="btn btn-shopping-cart">加入购物车</Button>
-            <Button className="btn btn-buy-instantly">立即购买</Button>
+            <Button onClick={onAddToCart} className="btn btn-shopping-cart">加入购物车</Button>
+            <Button onClick={onPurches} className="btn btn-buy-instantly">立即购买</Button>
           </View>
         </View>
       </View>
@@ -138,7 +140,9 @@ Modal.defaultProps = {
   onMaskClick:()=>{},
   onPlus:()=>{},
   onMinus:()=>{},
-  onChange:()=>{}
+  onChange:()=>{},
+  onAddToCart: () =>{},
+  onPurches: ()=>{}
 }
 
 

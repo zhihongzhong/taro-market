@@ -21,7 +21,7 @@ export const addItem = (item)=> ({
   title: item.title,
   desc: item.desc,
   num: item.num,
-  repoNum: item.repoNum,
+  reposNum: item.reposNum,
   img: item.img,
   price: item.price
 });
@@ -31,13 +31,19 @@ export const removeItem = (id) => ({
   id
 });
 
-export const incrementItem = (id) => ({
-  type: SHOPPINGLIST_OPERATION.INCREMENT,
-  id
-});
-
+export const increaseItem = (id)=> {
+  console.log("INCREMENT")
+  return {
+    type: SHOPPINGLIST_OPERATION.INCREMENT,
+    id
+  }
+}
 export const decrementItem =(id) => ({
   type: SHOPPINGLIST_OPERATION.DECREMENT,
   id
 });
+
+export const addItemNumber = (id, num) => ({
+  
+})
 
