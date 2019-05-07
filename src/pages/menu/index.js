@@ -1,11 +1,25 @@
 import Taro, {Component} from '@tarojs/taro';
 import {View} from '@tarojs/components';
+import { connect } from '@tarojs/redux';
 import SearchBar from '../../components/searchbar';
 import Modal from '../../components/modal';
 import CardList from '../../components/cardlist';
 import merchandiseImage from '../../images/itemImage.jpg';
 import './index.scss';
+import {addItem} from '../../actions/shoppinglist';
 
+
+const mapStatetoProps = ({ shoppinglist }) => ({
+  shoppinglist 
+})
+
+const mapDispatchToProps =(dispatch) => ({
+  add(merchandise) {
+    dispatch(addItem(merchandise))
+  }
+})
+
+@connect(mapStatetoProps, mapDispatchToProps)
 class Menu extends Component {
   constructor(props) {
     this.state = {

@@ -1,6 +1,6 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "myApp",
+	"projectname": "taro-market",
 	"description": "",
 	"appid": "wx3242b5ae5643653d",
 	"setting": {

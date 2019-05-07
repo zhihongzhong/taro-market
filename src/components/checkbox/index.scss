@@ -1,0 +1,30 @@
+.checkbox-root {
+    height: 200rpx;
+    width: 100%;
+    &__children-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+
+        .check-button-wrapper {
+            display: inline-flex;
+            justify-content: center;
+            align-content: center;
+
+            .check-btn {
+                width: 20rpx;
+                height:20rpx;
+                border-radius: 20rpx;
+                border: 1rpx solid rgb(68, 68, 68);
+            }
+
+            .check-btn-checked {
+                background: red;
+            }
+            .check-btn::after {
+                border:none;
+            }
+        }
+    }
+}
