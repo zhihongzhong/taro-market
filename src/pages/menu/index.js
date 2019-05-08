@@ -7,10 +7,23 @@ import CardList from '../../components/cardlist';
 import merchandiseImage from '../../images/itemImage.jpg';
 import './index.scss';
 import {addItem,increaseItem } from '../../actions/shoppinglist';
+import {REPOSITORY} from '../../constants/repository'
 
+const getMerchandises = (repository) => {
+  switch(repository.filter) {
+    default: 
+      return repository.merchandise
+    case REPOSITORY.SHOW_NORMAL: 
+      return repository.merchandises
+    case REPOSITORY.SHOW_PRICE_FROM_HIGH_TO_LOW: 
+      return repository.merchandises.sort((a, b)=> a.price > b.price)
+    case REPOSITORY.SHOW_PRICE_FROM_LOW_TO_HIGH:
+      return repository.merchandises.sort((a,b)=> a.price< b.price)
+  }
+}
 
-const mapStatetoProps = ({ shoppinglist }) => ({
-  shoppinglist 
+const mapStatetoProps = ({ repository }) => ({
+  merchandises: getMerchandises(repository)
 })
 
 const mapDispatchToProps =(dispatch) => ({
@@ -146,14 +159,24 @@ class Menu extends Component {
       return false
     }
 
-    if(contains(shoppinglist, merchandise)) {
+    if(contains(shoppinglist, merchandise)) 
       increment(merchandise.id)
-      return 
-    }
-    add(merchandise)
+    else add(merchandise)
+
+    this.setState({
+      modalShow: false
+    })
+    return
   }
 
   componentDidMount() {
+
+    // simulate get repository here.. 
+    // and then push it into repository reducer 
+    const {
+      
+    }
+
   }
   render() {
     const {
